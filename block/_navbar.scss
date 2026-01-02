@@ -58,7 +58,6 @@ body {
   color: #fff;
   border: none;
   border-radius: 6px;
-  cursor: pointer;
   margin-bottom: 20px;
 
   &:hover {
@@ -103,7 +102,7 @@ body {
   }
 }
 
-/* 📱 Responsive (junior level) */
+
 @media (max-width: 600px) {
   .search-bar {
     flex-direction: column;
