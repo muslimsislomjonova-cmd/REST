@@ -29,13 +29,26 @@ function showCountries(data) {
 
 const input = document.querySelector("input");
 const btn = document.querySelector(".btn");
+const regionFilter = document.getElementById("regionFilter");
 
-btn.addEventListener("click", () => {
-  const value = input.value.toLowerCase();
+btn.addEventListener("click", function () {
+  let searchText = input.value.toLowerCase();
+  let region = regionFilter.value;
 
-  const filtered = products.filter((item) =>
-    item.name.common.toLowerCase().includes(value)
-  );
+  let newList = [];
 
-  showCountries(filtered);
+  for (let i = 0; i < products.length; i++) {
+    let countryName = products[i].name.common.toLowerCase();
+    let countryRegion = products[i].region;
+
+    if (
+      countryName.includes(searchText) &&
+      (region === "all" || countryRegion === region)
+    ) {
+      newList.push(products[i]);
+    }
+  }
+
+  showCountries(newList);
 });
+

@@ -101,6 +101,23 @@ body {
     color: #555;
   }
 }
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .search {
+    font-weight: bold;
+  }
+
+  select {
+    min-width: 160px; 
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+ 
+  }
+}
 
 
 @media (max-width: 600px) {
